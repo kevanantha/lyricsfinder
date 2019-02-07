@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Dropdown, Menu } from 'semantic-ui-react'
-//import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default class MenuExampleSizeTiny extends Component {
   state = { activeItem: 'home' }
@@ -12,13 +12,17 @@ export default class MenuExampleSizeTiny extends Component {
 
     return (
       <Menu size='large'>
-        <Menu.Item
-          color='blue'
-          name='home'
-          active={activeItem === 'home'}
-          onClick={this.handleItemClick}
-        />
-        {/*<NavLink to='/top-songs-id'>
+        <NavLink to={'/'}>
+          <Menu.Item
+            color='blue'
+            name='home'
+            active={activeItem === 'home'}
+            /* onClick={() => ( */
+            /*   <NavLink to={'/'}></NavLink> */
+            /* )} */
+          />
+        </NavLink>
+        {/*<NavLink to={'/top-songs-id'}>
           <Menu.Item
             color='blue'
             name='top_15_indonesia'
