@@ -5,22 +5,17 @@ const Context = React.createContext();
 
 export class Provider extends Component {
   state = {
-    track_list: [
-      { id: 1, track_name: 'asd' },
-      { id: 2, track_name: 'qwe' },
-    ],
+    track_list: [],
     header: "Top 10 Songs",
   }
 
   componentDidMount() {
     axios
       .get(
-        `https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/chart.tracks.get?chart_name=top&page=1&page_size=10&country=us&f_has_lyrics=1&apikey=${
-          process.env.REACT_MM_KEY
-        }`
+        `https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/chart.tracks.get?chart_name=top&page=1&page_size=10&country=us&f_has_lyrics=1&apikey=ecef669ac8af054a844b4ef2ca923ecb`
       )
       .then(res => {
-        console.log(res.data)
+        this.setState({ track_list: res.data.message.body.track_list })
       })
       .catch(err => console.log(err))
   }
