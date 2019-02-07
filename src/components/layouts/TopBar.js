@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Button, Dropdown, Menu } from 'semantic-ui-react'
+import { Dropdown, Menu } from 'semantic-ui-react'
+//import { NavLink } from 'react-router-dom';
 
 export default class MenuExampleSizeTiny extends Component {
   state = { activeItem: 'home' }
@@ -17,19 +18,27 @@ export default class MenuExampleSizeTiny extends Component {
           active={activeItem === 'home'}
           onClick={this.handleItemClick}
         />
+        {/*<NavLink to='/top-songs-id'>
+          <Menu.Item
+            color='blue'
+            name='top_15_indonesia'
+            active={activeItem === 'top_15_indonesia'}
+            onClick={this.handleItemClick}
+          />
+        </NavLink>*/}
 
         <Menu.Menu position='right'>
           <Dropdown item text='Language'>
             <Dropdown.Menu>
               <Dropdown.Item>English</Dropdown.Item>
-              <Dropdown.Item>Russian</Dropdown.Item>
+              <Dropdown.Item>Indonesian</Dropdown.Item>
               <Dropdown.Item>Spanish</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
 
-          <Menu.Item>
+          {/*<Menu.Item>
             <Button primary>Sign In</Button>
-          </Menu.Item>
+          </Menu.Item>*/}
         </Menu.Menu>
       </Menu>
     )

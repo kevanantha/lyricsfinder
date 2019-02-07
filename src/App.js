@@ -14,6 +14,7 @@ class App extends Component {
             <TopBar />
             <Switch>
               <Route exact path="/" component={AppContainer} />
+              <Route path="/us" component={AppContainer} />
             </Switch>
           </>
         </Router>
